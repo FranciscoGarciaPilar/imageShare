@@ -11,7 +11,6 @@ import Camera from 'react-native-camera';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions';
-import ImagesList from "../components/ImagesList";
 
 class CameraScreen extends Component {
     static navigationOptions = {

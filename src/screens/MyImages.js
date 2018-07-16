@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import * as Actions from '../actions';
 import { Icon } from 'native-base';
 import Header from '../components/Header';
-import ImagesGrid from '../components/ImagesGrid';
+import ImagesGrid from '../components/ImageGrid';
 
 var { height, width } = Dimensions.get('window');
 

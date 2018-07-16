@@ -52,5 +52,9 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+    <string>imageShare requires access to the camera on this device to perform this action</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>imageShare requires access to the image library on this device to perform this action</string>
 </dict>
 </plist>

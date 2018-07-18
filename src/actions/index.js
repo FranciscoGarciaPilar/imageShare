@@ -14,7 +14,7 @@ export function fetchImages(userId = null) {
 
  return dispatch => {
      dispatch({ type: actionName });
-     api.fetchImage(userId)
+     api.fetchImages(userId)
          .then(images => {
              dispatch({ type: actionNameSuccess, images });
          })

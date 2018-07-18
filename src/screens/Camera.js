@@ -7,7 +7,7 @@ import {
     View
 } from 'react-native';
 import { Button, Icon } from 'native-base';
-import Camera from 'react-native-camera';
+import { RNCamera } from 'react-native-camera';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions';
@@ -21,7 +21,7 @@ class CameraScreen extends Component {
 
     takePicture() {
         const options = {};
-        this.camera.capture({ metadata: options })
+        this.camera.takePictureAsync(options)
             .then((data) => {
                 this.props.addImage(data);
                 this.props.navigation.navigate('ImagesList');
@@ -32,10 +32,14 @@ class CameraScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Camera
+                <RNCamera
                     ref={(cam) => { this.camera = cam; }}
                     style={styles.preview}
-                    aspect={Camera.constants.Aspect.fill}
+                    type={RNCamera.Constants.Type.back}
+                    flashMode={RNCamera.Constants.FlashMode.on}
+                    permissionDialogTitle={'Permission to use camera'}
+                    permissionDialogMessage={'We need your permission to use your camera phone'}
+
                 >
                     <Button
                         onPress={this.takePicture.bind(this)}
@@ -44,7 +48,7 @@ class CameraScreen extends Component {
                     >
                         <Icon name='camera' style={{ fontSize: 70, color: 'white' }} />
                     </Button>
-                </Camera>
+                </RNCamera>
                 <Button
                     onPress={() => this.props.navigation.navigate('ImagesList')}
                     style={styles.backButton}

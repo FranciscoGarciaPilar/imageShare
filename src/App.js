@@ -9,7 +9,7 @@ import {
     applyMiddleware
 } from 'redux';
 import thunk from 'redux-thunk';
-import imagesReducer from './reducers/images';
+import imagesReducer from './reducers';
 
 import ImagesList from './screens/ImagesList';
 import MyImages from './screens/MyImages';

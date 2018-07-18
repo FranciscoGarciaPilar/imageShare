@@ -32,7 +32,7 @@ export default class ImagesGrid extends React.Component {
     }
 }
 
-const style = StyleSheet.create({
+const styles= StyleSheet.create({
     imageContainer: {
         flexDirection: 'row',
         alignItems: 'flex-start',

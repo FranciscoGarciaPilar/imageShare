@@ -23,6 +23,7 @@ class CameraScreen extends Component {
         const options = {};
         this.camera.takePictureAsync(options)
             .then((data) => {
+                console.log('photo data ', data);
                 this.props.addImage(data);
                 this.props.navigation.navigate('ImagesList');
             })

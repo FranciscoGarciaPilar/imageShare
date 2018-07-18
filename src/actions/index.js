@@ -28,8 +28,9 @@ export function fetchImages(userId = null) {
 export function addImage(data = null) {
     return dispatch => {
         dispatch({ type: 'ADD_IMAGE' });
-        api.addImage()
+        api.addImage(data)
             .then(imageSrc => {
+                console.log('imageSrc ', imageSrc);
                 dispatch({ type: 'ADD_IMAGE_SUCCESS', imageSrc })
             })
             .catch(error => {

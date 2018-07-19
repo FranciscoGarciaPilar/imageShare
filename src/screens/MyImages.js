@@ -18,10 +18,10 @@ var { height, width } = Dimensions.get('window');
 
 class MyImages extends React.Component {
     static navigationOptions = {
-        drawerLabel: 'My Images',
         tabBarIcon: ({ tintColor }) => (
             <Icon name='person' style={{ fontSize: 40, color: tintColor }} />
-        )
+        ),
+        drawerLabel: 'My images'
     };
 
     componentWillMount() {
